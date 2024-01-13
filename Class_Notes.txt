@@ -1,0 +1,249 @@
+CKA -
+
+Orientaion - 8:30 - 9:30PM IST 
+
+Main Session - 13th Jan 2024 - 8:30PM - 11:30PM IST
+
+CKA - 
+
+
+LAB Session ::: 
+
+	AWS - VMs
+	
+	GITHUB - account - 
+	
+	
+#######################
+Day 1 - 13th Jan. 2024
+#######################
+	
+	Pre-requisities :::
+	
+		Lab :::
+		
+			AWS Cloud Platform :
+			
+				Create a AWS free tier Account. 12 months 
+					Active Mobile Number
+					Active Email ID 
+					Active Credit/Debit Card - International Transaction enabled.
+					
+					https://aws.amazon.com/console/
+				
+				
+		
+		Class Notes & Documents :		
+					github - Repository 
+					
+					Create github account.					
+					https://github.com/
+					
+					
+		DockerHub :::
+					Container Registry
+					https://hub.docker.com/
+					
+					
+		
+		Introduction to Kubernetes :::
+		
+			Application Builds and Deployments :::
+			
+			Application ???
+			
+				Kubernetes is Open-Source Container Orchestration Tool :
+				It is used to Deploy the Micro-Service Based Applications and Services 
+				Used to Achive Continous Deployment without Downtime
+				
+			Deployment ???
+			
+				What is Application Deployment ???
+				
+					Artifacts ???  --> 
+					
+				Life Cycle of Application :::
+					
+					Developed 		--> 	Java Web Application - *.java (High Level Language)
+					
+					Build 			--> 	Compile the source Code 
+					
+					Create Artifacts -->  	Binaries (Executable code) *.exec/*.war/*.jar/*.dll/
+					
+					Artifacts are Deployed to Target Environments (QA/UAT/PROD)
+					
+				Environments ::
+				
+				Non-PROD Environment															Production Environment
+					
+				Dev Environment
+				Build Environment		Unit Testing 
+				Testing
+					QA - Quality Assurance Testing 
+						
+					UAT - User Acceptance Testing						=====>						Prod Environment
+					
+			
+			
+			Scenario 1 ::
+			
+			
+				Developer :: Create Java Program  *.java  IDE   +20 Lines 
+			
+				build 			- Compile & Create Artifacts	mywebwebapp.war
+				
+				Unit Testing 	-	Run the Application --
+									Web Application Server  - Tomcat / Nginx
+									
+									openjdk11,Tomcat8.0 --> Tested the Application, and completed Unit Testing   mywebwebapp_Img1
+									
+									Docker --> Build an appln Image - mywebwebapp_Img1(mywebwebapp.war,openjdk11,Tomcat8.0)
+									
+				Containerization ::
+				
+						It is a process of packaging the Application along with the dependencies. 
+									
+				Promote the Appln. 
+				
+				QA	Environment		-	mywebwebapp_Img1	& run the application using containers.
+				
+				UAT Environment		- 	mywebwebapp_Img1	& run the application using containers.
+				
+				PROD Environment	- 	mywebwebapp_Img1	& run the application using containers.
+				
+				Docker Engine :::
+	
+					Create Application image 
+					Create Containers 
+					Docker Compose 	-- Run Multiple Containers as a single Service.
+					
+							Application Service -- created using 3-tier Application Architecture ::
+							
+								Front_End Layer				C1
+								Application Layer			C2 
+								Back_End Database Layer 	C3
+				
+					Container Orchestration Tool :::
+						
+						Docker Swarm 	-- Orchestrate the Containers 	- only for Docker Container
+								It is used to combine, and ensure High Availability of Containers
+								Create Replicas of Containers.
+								
+								Auto-Scaling 
+								Load Balancing
+					
+					
+				Kubernetes 				-- Orchestrate the Containers
+			
+				Kubernetes is Open-Source Container Orchestration Tool
+				It is used to Deploy the Micro-Service Based Applications and Services 
+				Used to Achive Continous Deployment without any Downtime
+					Supports Relicas, Auto-Scaling, Load-Balancing
+					
+						10000 Users		50 Replicas of Containers 
+
+						50000 Users More Traffic 
+			
+				Managed Services :::		
+				
+					AWS - EKS 
+					Azure - AKS
+					GCP - GKS
+					
+				
+				Monolith Application Architecture :::
+							Tightly Coupled Application :::
+							
+					Billing System :: Destop Application 
+
+						Functions ::
+							UI
+							Billing Process 	--> fix the issue 
+							Stock Maintainence 
+							Data Log 
+							Customers Database Mgmt
+				
+				Micro-Service Based Application Architecture :::
+							Loosely Coupled Application :::
+				
+					Web Application :::
+					Mobile Apps :::::
+					
+					Netflix / amazon.com ==> web appln
+					
+					www.amazon.com 
+					
+					user_registration 	- Service1 - developer1 -  independently developed - tested, deployed to QA/UAT , Released to Prod
+					Sign_In 			- Service2 - developer2 -  independently developed - tested, deployed to QA/UAT , Released to Prod
+					Search 
+					Add to Cart 
+					Place the order 
+					payment 
+					confirm the order 
+					track the order 
+					sdfg				-	
+						
+						
+				What is DevOps ???
+				
+					DevOps is software Development Strategy to promote the collaboration between the teams like Development Team and the Operation Team to achive Continous Development, Continous Integration, Continous Testing, Continous Delivery / Deployment and Continous Monitoring in more automated fashion.
+				
+				
+				
+				DevOps Stage ::
+
+					Continous Development 
+							- it is a capability of Development team to do continuous Coding *.java 
+							
+						Use IDEs - Integrated Development Environment - VS Code, Visual Studio, Eclipse, pycharm - can be easily integrated with GIT, Jenkins
+					
+					Continous Integration 
+							Integrated the changes (Artifacts / Images) 
+							
+						Tools ::: jenkins, docker, kubernetes 
+					
+					Continous Testing 
+						Tools : jenkins, selenium 
+					
+					Continous Delivery / Deployment
+						Both are meant for Production Release . 
+					
+						Continous Delivery 		==> Expect Manual Approval for Production Release 
+						
+						Continous Deployment	==> It is completely Automated. Doesnt required any Manual approvals
+						
+						Without any Downtime ! 
+						
+						Kubernetes !
+					
+					Continous Monitoring 
+						
+				Tele-Comm 
+				
+				Tele-comm SP1	Intro. New Offer to Customers -- > shd be released ASAP ...
+				
+				SP2 
+				
+				Banking '	
+				
+				Financial 
+				Retails 
+				
+				
+				Code Promotion 
+				
+				deployment 
+				
+				PROD Release 
+
+			Kubernetes Architecture :::
+			
+			Core Concepts of Kubernetes ::
+			
+				
+		
+		
+					
+					
+		
+	
