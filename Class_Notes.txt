@@ -240,7 +240,158 @@ Day 1 - 13th Jan. 2024
 			
 			Core Concepts of Kubernetes ::
 			
+	
+#######################
+Day 2 - 14th Jan. 2024
+#######################		
+		
+			Kubernetes Architecture :::
+			
+			Install of Kubernetes 
+			
+			Core Concepts of Kubernetes ::	
+		
+		
+			Container Registry ::: DockerHub
+			
+			Repository ::: Is a subset of Container Registry
+			
+			
+			Environments ::
+			
+				Dev 
 				
+				Build 
+				
+				QA 
+				
+				UAT 										=======>>							PROD VMs -- 
+
+				Non-Prod
+				Kubernetes_Master Node (VM) 	==> Used to define and schedule the Deployments.
+						Worker_Node1	(VM)	Application -- Replicas of Containers 3 Replicas 
+						Worker_Node2	(VM)
+						Worker_Node3	(VM)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				Prod
+				Kubernetes_Master Node (VM) 	==> Used to define and schedule the Deployments.
+					1	Worker_Node1	(VM)	Application -- Replicas of Containers 3 Replicas 
+					2	Worker_Node2	(VM)
+						
+
+
+
+
+
+
+
+
+				Kubernetes_Master
+					Kubernetes_Master1 
+						Kubernetes_Cluster1
+							Worker_Node1	(VM)
+							Worker_Node2	(VM)						
+							Worker_Node3	(VM)					
+						Kubernetes_Cluster2
+							Worker_Node1	(VM)
+							Worker_Node2	(VM)						
+							Worker_Node3	(VM)			
+					Kubernetes_Master2
+						Kubernetes_Cluster1
+							Worker_Node1	(VM)
+							Worker_Node2	(VM)						
+							Worker_Node3	(VM)					
+						Kubernetes_Cluster2
+							Worker_Node1	(VM)
+							Worker_Node2	(VM)						
+							Worker_Node3	(VM)		
+
+
+
+			Terminologies :::
+			
+				- Images 			-- Static file used used to create containers 
+				
+				- Containers 		- Executable units of the Images 
+				
+				- Pods 				- Atomic unit of schedule/task 
+				
+				- Kubectl 			- Command Line Utility used to interact with Kubernetes Master 
+				
+				- Kubernetes_Master	- Used to Define and Schedule the Pods to WorkNodes 
+				
+				- Kubernetes_Cluster1  - It is Logical Grouping of WorkNodes/ 
+				
+				- Kubernetes_WorkNodes - It is used to run the application Pods.
+				
+				
+			Installation & Configuration of Kubernetes ::::
+			
+				1. Launch the Required VMs in ur Cloud Platform.
+				2. Open all the required Ports 
+				3. Login to All VMs.
+					Kubernetes_Master Node (VM) 	==> Used to define and schedule the Deployments.
+						Worker_Node1	(VM)	Application -- Replicas of Containers 3 Replicas 
+						Worker_Node2	(VM)
+				4. Execute some Commands in all the Nodes 
+					- Install Docker 
+					- Install CRI - Container Runtime Interface - ContainerD
+					- Start ContainerD 
+					- Install - Kubeadm, kubectl, kubelet
+					- Disable the Swap
+					- Start Kubelet 
+				
+				5. Execute some Commands only in MasterNode
+					- kubeadm init 
+				
+				5. Execute some Commands only in WorkNodes 
+					- kubeadm join 
+			
+
+		1. Launch the Required VMs in ur Cloud Platform.
+					
+			Login to AWS Console
+			
+			Choose default Region
+			
+			Search for EC2 
+			
+			EC2 Dashboard :::
+			
+				Launch Instances 
+				
+					AMI : Ubuntu Server 20.04
+					Instance Type : t2.micro
+					Key Pair create New 
+					No. Of Instance : 3
+					
+				Connect to EC2 Instances :	
+					- EC2 instance Connect 
+					
+					- SSH Agents - MobaXterm/Putty
+						*MobaXterm - Install in the Local Machine (Windows)
+						https://mobaxterm.mobatek.net/download.html
+						
+					- Terminal 				
 		
 		
 					
