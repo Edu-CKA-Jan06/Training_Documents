@@ -394,7 +394,95 @@ Day 2 - 14th Jan. 2024
 					- Terminal 				
 		
 		
+#######################
+Day 3 - 20th Jan. 2024
+#######################	
+
+		
+		Kubectl 
+			Commands / Syntax
+		
+		Pods 
+			How Pods are deployed 
+			Pod Networking 
+			
+		Installation and Configuration of Kubernetes Cluster.
+		
+		Write the Manifest files to create pods & any Kubernetes Objects
 					
+		
+		Kubectl 
+			Commands / Syntax
+			Syntax: 
+				kubectl <command> <type> <Object_name> <arg..> 
+			Eg: 
+				kubectl get pod <mywebapppod1> -o wide
+				
+		Pods 
+			How Pods are deployed 
+			Pod Networking 
+			
+
+			Installation & Configuration of Kubernetes ::::
+			
+				1. Launch the Required VMs in ur Cloud Platform.
+				2. Open all the required Ports 
+				3. Login to All VMs.
+					Kubernetes_Master Node (VM) 	==> Used to define and schedule the Deployments.
+						Worker_Node1	(VM)	Application -- Replicas of Containers 3 Replicas 
+						Worker_Node2	(VM)
+				4. Execute some Commands in all the Nodes 
+					- Define the Unique Node Name
+					- Install Docker 
+					- Install CRI - Container Runtime Interface - ContainerD
+					- Start ContainerD 
+					- Install - Kubeadm, kubectl, kubelet
+					- Disable the Swap
+					- Start Kubelet 
+				
+				5. Execute some Commands only in MasterNode
+					- kubeadm init 
+				
+				5. Execute some Commands only in WorkNodes 
+					- kubeadm join 
+			
+
+		Write the Manifest files to create pods & any Kubernetes Objects :::
+		
+		Application Development & Deployment Workflow :::
+		
+		Non-Prod Environment :::
+		
+			Dev Environment 		==> Coding 
+			Build 					==> Build - Compile & Create Artifacts(binaries) *.war
+										Using Docker - We Create Application Image.
+										Publish Application Image to Container Registry 
+										
+			Kubernetes_Master		==> It runs only the Kubernetes System Related Pods 
+										It Deploy/Schedule the Pods to the WorkerNodes 
+				Kubernetes_WorkNode1
+				Kubernetes_WorkNode2
+										
+										
+			NameSpace 			==> It is Logical Partition of the Kubernetes Cluster.
+			
+		How to Define a Pod using Manifest file??
+		
+			- How to write the Manifest File ::
+			
+				- *.yaml		Key:value pairs	# Declarative Scripts
+				- *.json
+	
+		Kubernetes Developer
+		Kubernetes Admins 
+		DevOps Team
+		
+		
+		In Containers ::
+			Port Mapping/Binding ::
+			
+			docker run -it -p <host_port>:<container_port> tomcat bash
+							
 					
 		
 	
