@@ -484,5 +484,140 @@ Day 3 - 20th Jan. 2024
 			docker run -it -p <host_port>:<container_port> tomcat bash
 							
 					
+			
+#######################
+Day 4 - 21st Jan. 2024
+#######################	
+
+		Controller Objects ::
 		
+			Replication Controller 
+			Replicaset
+			Deployment 
+			Daemonset 	
+
+
+		Replicas of Pod :::
+		
+			1 copy of pod deployed .
+			
+			3 copies of pods 
+			
+			Scale-Up 
+			
+			Scale-Down
+			
+			
+		How to deploy//Upgrade the Applications without any downtime ????
+		
+			
+			Deployment Controller Object.
+				1. It is used to create replicas of Pods 			v1.0  =  v1.1
+				2. Used to Upgrade the Application Version without any downtime
+				3. Downgrade/rollback the applications  without any downtime
+				4. Scale-Up 
+				5. Scale-Down 
+				
+			Prod_Server =>  mywebapp_v1.0		==> 	mywebapp_v1.1	
+			
+			Relicas 3 ==> Used to ensure high availability of pods. 
+			
+			pod_instance1(mywebapp_v1.0)		==>		mywebapp_v1.1	
+			pod_instance2(mywebapp_v1.0)
+			pod_instance3(mywebapp_v1.0)
+			
+			Deployment Stratagies: 
+			
+				- Rolling Update Strategy	*Default 
+					--> It will update a copy of pod with new version of Image
+							pod_instance1(mywebapp_v1.1)
+							
+			If deployment of new version fails, we can do rollback.
+							
+				- Canary / Blue-Deployments
+			
+			
+			Define Deployment Controller Objects :::
+			
+				deployment objects
+				replicaset 
+				pod instances.
+
+
+			Replicaset/Replication Controller  					(vs) Deployment 
+				Just to create Copies of pod instances					1. It is used to create replicas of Pods 			v1.0  =  v1.1
+				To perform Scale-Up/Down                                2. Used to Upgrade the Application Version without any downtime
+                                                                        3. Downgrade/rollback the applications  without any downtime
+                                                                        4. Scale-Up 
+                                                                        5. Scale-Down 
+																		
+		
+		Replicaset :
+			It is used to deploy a specific no. of pods in the available node.
+			It is to ensure high availability
+			
+		Daemonset - Controller Object!
+			It is used to deploy a copy of Pod in all the available Nodes.
+			
+			
+			Worker_Node1	--> Monitoring tool/Log/Metrix Tools using pod
+			Worker_Node2 	--> Monitoring tool/Log/Metrix Tools using pod
+			Worker_Node3	--> Monitoring tool/Log/Metrix Tools using pod
+			
+		Kubernetes Volumes :
+		
+			Stateful Applications :::
+			
+			Containers were initially used only for Stateless Applications.
+			
+			Micro-Service Based Application :::
+			
+			Deploy - 3 - tier Application ::
+			
+				Front_End(GUI)
+				
+				Application_Layer
+				
+				Back_End(Database)
+				
+				
+			Container Volume :::
+			
+			Containers / Pods are NOT the permanent Entities.
+			
+			Even If the pod/container is lost, the data should be preserved.
+			
+			Persistant Volumes:::
+			
+			Types of Kubernetes Volumes ::
+			
+			- EmptyDir		*Temporary. Once the Pod is delete, this EmptyDir Also gets deleted.
+			
+			- Hostpath Volume 
+			
+			- ConfigMaps 
+			
+			- Secrets 
+			
+			- Persistant Volumes 
+			
+			- Persistant Volume Claim
+
+
+			
+			- ConfigMaps == Are used to send the Non-Sensitive Data to the pod
+							
+			- Secrets 	 == Are used to send the Sensitive Data to the pod		
+							The data are accessible within the pod.
+							The secret are not accessible outside the pod.
+			
+			
+			
+		
+			mywebapp.war 		--> mywebappImage_v1.0	
+										- QA 
+										- UAT 
+										- PROD 
+			
+				
 	
