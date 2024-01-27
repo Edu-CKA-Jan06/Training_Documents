@@ -620,4 +620,74 @@ Day 4 - 21st Jan. 2024
 										- PROD 
 			
 				
+	#######################
+Day 5 - 27th Jan. 2024
+#######################	
+
+
+		- Kubernetes Storage Concepts 
+		
+				Developer 
+				
+						Pod :
+						
+						 1TB of Volume 
+						 
+						 
+				Persistant Volumes 
+				
+				Static and Dynamic Provision ::
+
+				Persistant Volumes Claim 
+				
+				
+				Hostpath Volume ::::
+				
+				Kubernetes_Master 
+					WN1
+					WN2
+					WN3
+					WN4
+				
+				When we deploy a pod 
+		
+		- Kubernetes Services 
+
+				- ClusterIP Service 		# Default
+		
+				- NodePort Service 
+
+				- Load Balancer Service 
+				
+				
+				Pod1		 			<===> 			Pod2 
+				src:x.x.x.x								y.y.y.y
+				dest:y.y.y.y
+				
+				
+				
+			3-Tier Application Architecture ::: Service 
+			
+			Front_End 				Podf1,f2,f3
+			
+			
+			Application_Layer		PodA1,A2,A3
+			
+			
+			Back_End(DataBase)		PodD1,D2,D3
+			
+			
+		NodeSelector ::
+		
+Next : 
+
+	Ingress Controller 
 	
+	Scheduler 
+	
+	Security 
+	
+	Trouble-shooting & Monitoring 
+	
+	HELM Chart 
+		Craete Kubernetes Dashboard 
