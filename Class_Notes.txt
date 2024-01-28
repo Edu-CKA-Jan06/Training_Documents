@@ -691,3 +691,136 @@ Next :
 	
 	HELM Chart 
 		Craete Kubernetes Dashboard 
+
+		
+		
+#######################
+Day 6 - 28th Jan. 2024
+#######################	
+
+
+		Ingress Controller Object.
+		
+		Security 
+		
+		Trouble-shooting & Logs
+
+	Demos ::
+		HELM Chart 
+			Craete Kubernetes Dashboard (Prometheus & Grafana)
+		
+		CICD Pipeline --> Using Jenkins -- Automated Build and Deployments using kubernetes
+		
+			Java Maven Spring boot web application 
+			
+		Installation & Configuration of Kubernetes using kubeadm
+		
+		Storage Concepts 
+		
+		Controller Objects & Scheduling 
+		
+		Services and Networking :: Network plugins - Flannels Network Plugins 
+		
+		Security - Namespaces!
+		
+		Trouble-shooting and Monitoring Logs 
+		
+		
+		Ingress Controller Object :::
+		
+		Node port serivces is meant for a specific micro-service 
+		
+		Web Application -- 100 Micro-Service 
+		
+		Load-Balancer Service    ==>  Ingress Controller
+		
+		How the Load Balancer -- 
+		
+		Label and Selector
+		
+		
+
+		
+		Routing ::
+		
+			Simple Routing 
+			
+			Path based Routing :::
+			
+				www.gmail.com 				LB Services 
+				www.gmail.com/inbox 		Path based routing in Ingress Rules
+				www.gmail.com/sent
+				www.gmail.com/trash			
+				
+			Host based Routing 
+			
+				www.google.com 
+				maps.google.com 
+				translate.google.com
+				mail.google.com 	
+					www.gmail.com/inbox 		Path based routing in Ingress Rules
+					www.gmail.com/sent
+					www.gmail.com/trash			
+					
+					
+			DNS Entries :::
+			
+			Load Balancer - xxx.yyy.zzz.ccc	(LB IP_Address)
+			
+			DNS Entries :::
+			
+				www.google.com 
+				maps.google.com 
+				translate.google.com
+				mail.google.com 
+				
+				
+		Ingress Controller :::
+		
+			Define the Ingress controller 			- using Nginx
+			
+			Define the Ingress Resources Rules 		- *.yaml - ingress - Host/Path/Single_Service
+			
+			
+		Namespace :::::
+		
+			Logical Partitioning of the Cluster.
+			
+			Dev_Team1 --> Deploy their pods 
+			
+				Namespace !!!
+				
+			kube-system
+			kube-flannel 
+			default 
+			QA 
+			UAT 
+			PROD 
+				
+					Default Namespace 
+					
+		Kubernetes Security  ::::
+		
+		
+			API Server :::: 
+			
+			
+			Role 
+			
+				Namespace Level 
+				
+				Cluster Level 
+				
+		
+Next :::
+
+	Demos ::
+		HELM Chart 
+			Craete Kubernetes Dashboard (Prometheus & Grafana)
+		
+		CICD Pipeline --> Using Jenkins -- Automated Build and Deployments using kubernetes
+		
+			Java Maven Spring boot web application 
+			
+	
+		
