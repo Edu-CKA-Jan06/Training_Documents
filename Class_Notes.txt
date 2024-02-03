@@ -824,3 +824,121 @@ Next :::
 			
 	
 		
+		
+#######################
+Day 7 - 3rd Feb. 2024
+#######################	
+
+	Demos ::
+		HELM Chart 
+			Craete Kubernetes Dashboard 
+		
+		CICD Pipeline --> Using Jenkins -- Automated Build and Deployments using kubernetes
+		
+			Java Maven Spring boot web application 
+			
+	
+	Node Selector ????
+	
+	Scheduling
+	
+	ETCD --> volume 
+	
+	
+	Kubernetes_Master(Passive_Node)
+		Kubernetes_Master(Active_Master)		- Control Plane
+		
+			Worker_Node1
+			Worker_Node2
+			Worker_Node3
+			
+				
+	default 		# for application pod deployments 
+	kube-system
+	kube-flannel
+	
+	
+	Infra-Structure Perspective -> 
+	
+	snaptshot - volume 
+
+Deployment ::::	
+	
+	Non-Prod 									NameSpace : DEV/QA/UAT	--> Business Hours										
+		Kubernetes_Master(Active_Master)	
+			
+			Worker_Node1			Pod1
+			Worker_Node2
+			Worker_Node3
+
+			
+	Prod 										NameSpace : Prod(Active) 24/7
+		Kubernetes_Master(Active_Master)
+			
+			Worker_Node1
+			Worker_Node2
+			Worker_Node3
+			
+
+Deployment :::
+
+	Scheduler to deploy the pods in the Nodes.
+	
+		Scheduler Identify the Healthy Worker Node for Deployment !!!
+		
+		From ETCD, it collects the details of the workerNodes.
+		
+		In Manifest file, pods specifications 
+	
+	Node-Selector -- It helps to select the Node for deployment.
+	
+		Kubernetes_Master(Active_Master)
+			
+			Worker_Node1	(label the node) ssd		kubectl taint node_name1 key:no_schedule
+			Worker_Node2	hdd
+			Worker_Node3 	ssd
+			
+			Labels & Selectors are used during the Scheduling.
+			
+			
+
+Kubernetes Package Manager ::::
+
+		Package Manager ????
+		
+			Linux - 
+				Ubuntu	- apt 		- Install/Unstall/Update the Packages.
+				centos/rhel - yum 
+				Fedoro 	- dnf 
+				curl 
+				
+		Helm - Is a Package Manager for Kubernetes.
+		
+			https://helm.sh/docs/intro/install/
+			
+			
+			- Installed HELM 
+			
+			- Using Helm we can install a package for Kubernetes
+
+				Monitoring Dashboards 
+				
+				Kubernetes_Dashboard is Package to create Dashboards for Open-Source Kubernetes
+			
+			
+			13.233.98.213:30415	
+			https://13.233.98.213:30415/
+				
+				
+				
+				user --> should have access to kubernetes_Dashboard svc 
+				
+				Create User ID 			- Service ID
+				
+				Give Admin Access 		- Create Role / Cluster Role ?
+				
+				NameSpace level
+				
+				Cluster Level 
+				
+				
