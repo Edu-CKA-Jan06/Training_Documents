@@ -1,0 +1,73 @@
+
+
+HELM Chart:::
+Helm is a pkg manager for kubernetes
+which help to automatically create manifest files for any kubernetes objects in the form of HELM Charts
+
+HELM Chart for prometheus
+
+Eg.: Kubernetes Dashboard installation using HELM
+
+Install HELM 
+on kubernetes master node install Helm
+
+#Downlaod helm tar ball for linux
+
+
+wget https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
+
+#https://github.com/helm/helm/releases/download/v3.9.4/helm-v3.9.4-linux-amd64.tar.gz
+
+#Extract tar ball
+tar -zxvf helm-v3.6.3-linux-amd64.tar.gz
+
+#Move helm to usr/local/bin/helm
+sudo mv linux-amd64/helm /usr/local/bin/helm
+
+vi .bash_profile 
+
+#Append the helm path to PATH Variable and save.
+
+/usr/local/bin
+
+source ~/.bash_profile
+
+#run helm
+helm
+
+#Install Kubernetes Dashboard using Helm
+
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard
+
+helm install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard
+
+kubectl get svc 
+
+#choose kubernetes-dashboard service 
+
+kubectl edit svc kubernetes-dashboard
+
+#goto type: key && Change ClusterIP to NodePort & save the file
+
+#Now check the service, it should show you, NortPort with Nodeport IP
+
+kubectl get svc 
+
+# Now use the external IP & Nodeport to access the dashboard. When it asked for token, execute following commands to create service account & token
+
+kubectl create serviceaccount dashboard -n default
+
+kubectl create clusterrolebinding dashboard-admin -n default --clusterrole=cluster-admin --serviceaccount=default:dashboard
+
+kubectl create token dashboard
+
+kubectl get secret $(kubectl get serviceaccount dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+
+https://15.207.114.100:31290/
+
+https://13.234.213.167:32761/
+
+https://15.207.87.52/31160
+
+13.234.213.167:32761
+*******************************************************
