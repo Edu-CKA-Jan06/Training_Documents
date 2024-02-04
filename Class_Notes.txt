@@ -942,3 +942,153 @@ Kubernetes Package Manager ::::
 				Cluster Level 
 				
 				
+#######################
+Day 8 - 4th Feb. 2024
+#######################		
+
+
+		
+		Deployments ::
+		
+			Kubernetes is used to deploy micro-service based applications!
+			
+
+			
+			Continous Delivery 		->	It expects the manual approvals for production releases.
+										Might have down-time during production release
+			
+			Continous Deployments 	-> It is used to deploy the services to production without any manual approvals.
+	                                   This can be achieved without any down-time during production release
+									   
+										Deployment controller object. --> Deployment Strategy : Rolling Update Strategy
+										Service - NodePort Service.
+										
+									    Blue-Green Deployment 	==> Namespaces 
+										
+										Production Kubernetes_Master 				NameSpace(ActiveProd_App_V1.1) LIVE Environment - Stopped.
+													WN1,WN2,WN3,WN4,...
+										
+										App_v2.0									NameSpace(ActiveProd_App_v2.0) LIVE Environment
+										App_v2.1
+										App_v2.2
+										App_V3.0
+								
+			
+					Production Server -- Active App_V1.0		LIVE	Down this server
+					
+					Production Server -- Passive App_V2.0		LIVE  changed to Active 
+					
+		
+		DevOps Team :::
+		
+			Manage the Source Code Repositories 
+			
+			Jenkins 
+			
+			Docker Builds 
+			
+			Ansible/Terraform 
+			
+			Kubernetes 
+			
+			
+			Automated Builds and Deployments - 
+				CICD Pipeline :::
+				
+				Jenkins - Build Orchestration Tool 
+				
+				Java Web Application :::
+				
+					Continous Development Approach;
+					
+						Commit the changes to Src_Code Repo.(Github)
+						
+					Using DevOps :
+					
+						Automate the Application Build :
+							- Process of compiling the source code and create artifacts(Binaries - *.war/*.jar) 
+						Automate Unit Testing 
+						Deployed to Target Environments(QA/UAT) for further Testing 
+						Notify the users about the process 
+						
+						Deployed to Prod_Environment.
+						
+						
+				Jenkins is one of the open source build orchestration tools
+					used to create Build and Deployment Pipeline Projects
+					
+				Azure Pipeline
+				AWS CodePipeline 
+				Bamboo
+				gitlab-ci
+				github action
+				
+				Detailed Accessment of the Existing Environment, Application build and deployment process : 
+				
+				Kubernetes Admins :
+				
+					Define the Target Environments :::
+							
+					Non-Prod 				Prod 
+					Namespaces				Namespaces 
+					
+					
+				Design the Infra-Structure :::
+				
+					CICD ->
+					
+				Servers ::::
+					
+						Jenkins_Master 			--> Used to Create Jenkins Projects/Pipeline Jobs & Schedule the Jenkins Projects to Slave Nodes.	
+							Jenkins_Slave_Node	--> Used to execute the actual builds.
+							
+						Kubernetes_Master
+							Kubernetes_WorkNode1
+							Kubernetes_WorkNode2
+							Kubernetes_WorkNode3
+							
+					Jenkins are used to automate the deployment of pods in kubernetes Cluster.
+					
+				Tools ::::
+				
+						Jenkins_Master 					--> git,jdk,jenkins 	
+							JSlave_Node-Build_Server	--> Application Build Tool - Maven	=> artifacts(*.war/*jar)
+															Docker Engine - Build the Container Image 
+															Push the container Image to Container Registry(DockerHub)
+															Tools : git,jdk,maven,docker							
+						Kubernetes_Master				--> CRI-ContainerD,kubeadm,kubectl,kubelet		
+							Kubernetes_WorkNode1
+							Kubernetes_WorkNode2
+							
+							
+				CICD Pipeline :::
+				
+					Stages ::: Set of Tasks to be performed.
+					
+						1. SCM_Checkout Stage 
+						2. Build Stage 					->  Compile the code and create artifacts 
+														    Unit Testing of the code 
+						3. Build Docker Container Image ->  Use the artifacts and create docker image - Dockerfile
+						4. Push the image to DockerHub Registry
+						5. Deployed to Kubernetes_Cluster
+						
+				
+				Jenkins_Master 														
+					JSlave_Node-Build_Server	- SCM Repo is clone here.
+                Kubernetes_Master			
+                	Kubernetes_WorkNode1
+                	Kubernetes_WorkNode2
+					
+					
+				Source Code Repository : 
+					Contains the Application Code and properties to build and deploy the applications
+					
+			Integration of ::
+				
+				Jenkins_Master 				
+                	JSlave_Node-Build_Server
+                Kubernetes_Master			
+                	Kubernetes_WorkNode1
+                	Kubernetes_WorkNode2
+					
+					
